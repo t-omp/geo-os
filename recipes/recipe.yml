@@ -45,4 +45,7 @@ modules:
           - org.gnome.Loupe
           - org.kde.falkon
 
+  - type: script
+    scripts:
+      - emacs-bedrock.sh
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
