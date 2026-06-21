@@ -1,14 +1,8 @@
----
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: geo-os
-# description will be included in the image's metadata
 description: personal sway based image for an underpowered machine.
-
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/wayblueorg/sway
-image-version: stable # latest is also supported if you want new updates ASAP
-
+image-version: stable
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
@@ -22,25 +16,21 @@ modules:
       copr:
         - atim/starship
     install:
-      packages:
-        - micro
-        - starship
-        - emacs
-        - fish
-
+      - micro
+      - starship
+      - emacs
+      - fish
     remove:
-      packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - firefox
+      - firefox-langpacks  # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
+      - scope: system # If no repo information is specified, Flathub will be used by default
+        install:
           - org.mozilla.firefox
           - org.gnome.Loupe
           - org.kde.falkon
