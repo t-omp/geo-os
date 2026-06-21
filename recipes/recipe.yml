@@ -2,7 +2,7 @@
 name: geo-os
 description: personal sway based image for an underpowered machine.
 base-image: ghcr.io/wayblueorg/sway
-image-version: latest
+image-version: 44
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
@@ -32,13 +32,17 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-      - scope: system # If no repo information is specified, Flathub will be used by default
-        install:
+      - scope: user
+        repo:
+          # you can override the title to make inclusion of both system and user repos clearer
+          title: Flathub (user)
+      - notify: true
+        scope: system
+        repo:
+          title: Flathub (system)
+        install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
-          - com.gitlab.coringao.cavestory-nx
           - org.kde.falkon
-      - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
