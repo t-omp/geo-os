@@ -37,6 +37,7 @@ modules:
         install:
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - com.gitlab.coringao.cavestory-nx
           - org.kde.falkon
       - scope: user # Also add Flathub user repo, but no user packages
 
