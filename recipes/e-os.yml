@@ -23,10 +23,14 @@ modules:
         - fish
         - rust
         - cargo
+        - tldr
         - xorg-x11-server-Xorg
         - xorg-x11-xinit
         - xterm
-
+        - tlp
+        - alsa-utils
+        - brightnessctl
+        - git
 
   - type: script
     scripts:
