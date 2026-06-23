@@ -23,8 +23,6 @@ modules:
         - fish
         - rust
         - cargo
-        - xorg
-        - xinit
         - xorg-x11-server-Xorg
         - xorg-x11-xinit
         - xterm
