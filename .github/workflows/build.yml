@@ -27,7 +27,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - eos.yml
+          - e-os.yml
           - sway.yml
     steps:
       # the build is fully handled by the reusable github action
