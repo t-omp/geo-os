@@ -23,7 +23,15 @@ modules:
         - fish
         - rust
         - cargo
+        - xorg
         - xinit
+        - xserver-xorg-core
+        - xserver-xorg-video-all
+        - xserver-xorg-input-all
+        - x11-xserver-utils
+        - x11-xkb-utils
+        - x11-utils
+        - xterm
 
 
   - type: script
