@@ -21,7 +21,9 @@ modules:
         - starship
         - emacs
         - fish
-
+        - rust
+        - cargo
+        - tldr
 
     remove:
       packages:
@@ -41,9 +43,13 @@ modules:
         repo:
           title: Flathub (system)
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-          - org.kde.falkon
+
+
+  - type: script
+    scripts:
+      - |
+      rm -rf /etc/xinitrc
+
 
   - type: script
     scripts:
