@@ -33,17 +33,17 @@ modules:
         - firefox-langpacks  # also remove firefox dependency (not required for all packages, this is a special case)
         - rofi
 
-  - type: default-flatpaks
-    configurations:
-      - scope: user
-        repo:
-          # you can override the title to make inclusion of both system and user repos clearer
-          title: Flathub (user)
-      - notify: true
-        scope: system
-        repo:
-          title: Flathub (system)
-        install: # system flatpaks we want all users to have and not remove
+  # - type: default-flatpaks
+  #   configurations:
+  #     - scope: user
+  #       repo:
+  #         # you can override the title to make inclusion of both system and user repos clearer
+  #         title: Flathub (user)
+  #     - notify: true
+  #       scope: system
+  #       repo:
+  #         title: Flathub (system)
+  #       install: # system flatpaks we want all users to have and not remove
 
 
   - type: script # tidies build to remove x11 legacy files
