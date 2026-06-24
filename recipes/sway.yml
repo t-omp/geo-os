@@ -48,8 +48,7 @@ modules:
 
   - type: script # tidies build to remove x11 legacy files
     scripts:
-      - |
-          rm -rf /etc/xinitrc
+      - remove-xinitrc.sh
 
   - type: systemd
     user:
