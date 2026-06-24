@@ -46,9 +46,9 @@ modules:
   #       install: # system flatpaks we want all users to have and not remove
 
 
-  - type: script # tidies build to remove x11 legacy files
-    scripts:
-      - remove-xinitrc.sh
+  # - type: script # tidies build to remove x11 legacy files
+  #   scripts:
+  #     - remove-xinitrc.sh
 
   - type: script
     scripts:
