@@ -50,11 +50,6 @@ modules:
     scripts:
       - remove-xinitrc.sh
 
-  - type: systemd
-    user:
-      enabled:
-        - enable-emacs.service
-
   - type: script
     scripts:
       - emacs-bedrock.sh
