@@ -46,16 +46,15 @@ modules:
         install: # system flatpaks we want all users to have and not remove
 
 
-  - type: script #tidies build to remove x11 legacy files
+  - type: script # tidies build to remove x11 legacy files
     scripts:
       - |
-      rm -rf /etc/xinitrc
-      
+          rm -rf /etc/xinitrc
+
   - type: systemd
     user:
       enabled:
         - enable-emacs.service
-
 
   - type: script
     scripts:
