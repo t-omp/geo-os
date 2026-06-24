@@ -31,6 +31,7 @@ modules:
           # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks  # also remove firefox dependency (not required for all packages, this is a special case)
+        - rofi
 
   - type: default-flatpaks
     configurations:
@@ -45,10 +46,15 @@ modules:
         install: # system flatpaks we want all users to have and not remove
 
 
-  - type: script
+  - type: script #tidies build to remove x11 legacy files
     scripts:
       - |
       rm -rf /etc/xinitrc
+      
+  - type: systemd
+    user:
+      enabled:
+        - enable-emacs.service
 
 
   - type: script

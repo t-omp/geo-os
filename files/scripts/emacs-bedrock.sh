@@ -9,12 +9,15 @@ set -oue pipefail
 rm -rf /tmp/emacs-bedrock
 git clone https://codeberg.org/ashton314/emacs-bedrock.git /tmp/emacs-bedrock
 echo "(set-frame-parameter nil 'fullscreen 'fullboth)" >> /tmp/emacs-bedrock/init.el
+echo "((use-package xdg-launcher
+  :vc (:url "https://github.com/emacs-exwm/xdg-launcher")))" >> /tmp/emacs-bedrock/extras/base.el
+
 # Install into /etc/skel so new users get the config
 mkdir -p /etc/skel/.emacs.d
-
 cp /tmp/emacs-bedrock/early-init.el /etc/skel/.emacs.d/
 cp /tmp/emacs-bedrock/init.el /etc/skel/.emacs.d/
 cp -r /tmp/emacs-bedrock/extras /etc/skel/.emacs.d/
 
 # Clean up
 rm -rf /tmp/emacs-bedrock
+
