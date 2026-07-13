@@ -15,10 +15,13 @@ modules:
     repos:
       copr:
         - atim/starship
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
     install:
       packages:
         - emacs
         - fish
+        - code
 
     remove:
       packages:
