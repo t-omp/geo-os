@@ -16,12 +16,12 @@ modules:
       copr:
         - atim/starship
       keys:
-        - https://packages.microsoft.com/keys/microsoft.asc
+        - https://packages.microsoft.com/keys/microsoft.asc #doesn't work atm
     install:
       packages:
         - emacs
         - fish
-        - code
+        - https://go.microsoft.com/fwlink/?LinkID=760867
 
     remove:
       packages:
